@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "build:css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify",
+    "build:css": "node tailwind/build.mjs",
     "build": "npm run build:css && babel src --out-dir dist --extensions .js,.jsx"
   },
   "license": "MIT",
@@ -34,8 +34,8 @@
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.3"
+    "@tailwindcss/postcss": "4.3.3",
+    "postcss": "^8.5.23",
+    "tailwindcss": "4.3.3"
   }
 }

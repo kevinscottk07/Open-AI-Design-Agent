@@ -1,24 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind 4, kept to Tailwind 3's output (see tailwind/v3-compat.css).
+   The theme is inlined, as v3 emitted it, so these values never land in
+   :root where they could clash with a host page's own variables. */
+@import "tailwindcss" source(none) theme(inline);
+@import "../tailwind/v3-compat.css" theme(inline);
 
-@theme {
+@source "./**/*.{js,jsx,ts,tsx}";
+
+/* Values from the Tailwind 3 config. The semantic colors resolve through
+   the CSS variables below. */
+@theme inline {
   --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
+  --color-divider: var(--border-subtle);
   --color-bg-page: var(--bg-page);
   --color-bg-card: var(--bg-card);
   --color-bg-card-hover: var(--bg-card-hover);
   --color-primary-text: var(--text-primary);
   --color-secondary-text: var(--text-secondary);
-  --color-divider: var(--border-subtle);
-  
-  /* Status Colors */
-  --color-success: var(--color-success);
-  --color-success-bg: var(--color-success-bg);
-  --color-warning: var(--color-warning);
-  --color-warning-bg: var(--color-warning-bg);
-  --color-error: var(--color-error);
-  --color-error-bg: var(--color-error-bg);
+  --color-border-main: var(--border-default);
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* Tailwind 3's sans stack (4.3 ships a different one). */
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @layer base {
